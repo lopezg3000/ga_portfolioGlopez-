@@ -1,49 +1,117 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import Helmet from "react-helmet"
+import { StaticQuery, graphql } from "gatsby"
+import styled, { createGlobalStyle } from "styled-components"
+import reset from "styled-reset"
+import styledNormalize from "styled-normalize"
+import "typeface-pacifico"
+import "typeface-raleway"
+import "typeface-open-sans"
 
-import Header from "./header"
-import "./layout.css"
+import Navbar from "./Navbar"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
+const GlobalStyle = createGlobalStyle`
+${reset}
+${styledNormalize}
+
+html {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+body, input, select, textarea {
+    font-size: 14pt;
+    line-height: 1.5;
+    font-family: 'Open Sans';
+}
+
+p {
+    margin-bottom: 64px;
+    color: #666;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway';
+    text-transform: uppercase;
+    letter-spacing: 0.3em; 
+    color: #292929;
+}
+`
+
+const Body = styled.div`
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  width: 100vw;
+  overflow: hidden;
+  img {
+    margin-bottom: 0;
+  }
+`
+
+const Footer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  img {
+    margin-bottom: 0;
+  }
+`
+
+const FooterText = styled.div`
+  font-size: 0.7em;
+  padding: 3em;
+`
+
+const Layout = ({ children, noMenu }) => (
+  <StaticQuery
+    query={graphql`
+      query layoutQuery {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+        allMenuJson {
+          edges {
+            node {
+              title
+              link
+              id
+            }
+          }
         }
       }
-    }
-  `)
-
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
-}
+    `}
+    render={data => (
+      <>
+        <Body>
+          <GlobalStyle />
+          <Helmet title={data.site.siteMetadata.title}>
+            <html lang="en" />
+            <meta
+              name="description"
+              content="I am a software developer who enjoys creating responsive websites and implementing best practices!"
+            />
+          </Helmet>
+          <Navbar menu={data.allMenuJson.edges} noMenu={noMenu} />
+          {children}
+          <Footer>
+            <FooterText>glopez.com</FooterText>
+          </Footer>
+        </Body>
+      </>
+    )}
+  />
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
