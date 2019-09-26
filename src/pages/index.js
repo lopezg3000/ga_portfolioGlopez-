@@ -42,7 +42,7 @@ const SectionTitle = styled.h2`
 `}
 `
 
-const indexPage = ({ data }) => (
+const IndexPage = ({ data }) => (
   <Layout>
     <StyledHero fluid={data.hero.edges[0].node.fluid}>
       <HeroText />
@@ -73,7 +73,7 @@ const indexPage = ({ data }) => (
   </Layout>
 )
 
-export default indexPage
+export default IndexPage
 export const pageQuery = graphql`
   query indexQuery {
     allSocialJson {
