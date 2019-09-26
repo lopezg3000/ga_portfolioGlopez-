@@ -54,7 +54,7 @@ const Body = styled.div`
   }
 `
 
-const Footer = styled.div`
+const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   width: 100vw;
