@@ -6,6 +6,8 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@rebass/grid": "6.1.0",
+    "@types/react-helmet": "5.0.10",
+    "@types/styled-components": "4.1.19",
     "babel-plugin-styled-components": "^1.10.6",
     "eslint": "6.4.0",
     "eslint-plugin-flowtype": "2.x",
