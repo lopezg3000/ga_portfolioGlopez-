@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import styled, { css } from "styled-components"
 import { Flex, Box } from "@rebass/grid"
 import Hero from "../components/Hero"
-import Layout from "../components/Layout"
+import layout from "../components/Layout"
 import HeroText from "../components/HeroText"
 import Social from "../components/Social"
 import Technologies from "../components/Technologies"
@@ -43,7 +43,7 @@ const SectionTitle = styled.h2`
 `
 
 const IndexPage = ({ data }) => (
-  <Layout>
+  <layout>
     <StyledHero fluid={data.hero.edges[0].node.fluid}>
       <HeroText />
       <Social edges={data.allSocialJson.edges} />
@@ -70,7 +70,7 @@ const IndexPage = ({ data }) => (
       <SectionTitle>My Favorite Technologies</SectionTitle>
       <Technologies edges={data.allLogos.edges} />
     </Section>
-  </Layout>
+  </layout>
 )
 
 export default IndexPage
