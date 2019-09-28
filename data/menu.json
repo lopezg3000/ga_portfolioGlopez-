@@ -1,18 +1,10 @@
 [
   {
-    "title": "Contact",
-    "link": "#contact"
-  },
-  {
-    "title": "Portfolio",
-    "link": "#portfolio"
-  },
-  {
     "title": "About",
     "link": "#about-me"
   },
   {
-    "title": "Home",
-    "link": "#home"
+    "title": "Technologies",
+    "link": "#technologies"
   }
 ]

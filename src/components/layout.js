@@ -71,7 +71,7 @@ const FooterText = styled.div`
   padding: 3em;
 `
 
-const layout = ({ children, noMenu }) => (
+const Layout = ({ children, noMenu }) => (
   <StaticQuery
     query={graphql`
       query layoutQuery {
@@ -113,8 +113,8 @@ const layout = ({ children, noMenu }) => (
   />
 )
 
-layout.propTypes = {
+Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default layout
+export default Layout
