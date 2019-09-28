@@ -9,7 +9,7 @@ import "typeface-pacifico"
 import "typeface-raleway"
 import "typeface-open-sans"
 
-import Navbar from "./Navbar"
+import Navbar from "../components/Navbar"
 
 const GlobalStyle = createGlobalStyle`
 ${reset}
