@@ -1,10 +1,18 @@
 [
   {
-    "title": "About",
-    "link": "#about-me"
+    "title": "Contact",
+    "link": "#contact"
   },
   {
     "title": "Technologies",
     "link": "#technologies"
+  },
+  {
+    "title": "Education",
+    "link": "#education"
+  },
+  {
+    "title": "About",
+    "link": "#about"
   }
 ]

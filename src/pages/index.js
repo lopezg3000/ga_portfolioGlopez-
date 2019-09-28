@@ -8,6 +8,7 @@ import HeroText from "../components/HeroText"
 import Social from "../components/Social"
 import Technologies from "../components/Technologies"
 import Education from "../components/Education"
+import ContactForm from "../components/ContactForm"
 
 import { media } from "../utils/style"
 
@@ -49,7 +50,7 @@ const IndexPage = ({ data }) => (
       <HeroText />
       <Social edges={data.allSocialJson.edges} />
     </StyledHero>
-    <Section id="about-me">
+    <Section id="about">
       <h1>About Me</h1>
       <Flex alignItems="center" flexDirection="column">
         <Box px={2} width={[1, 1 / 2]}>
@@ -74,6 +75,14 @@ const IndexPage = ({ data }) => (
     <Section id="technologies">
       <SectionTitle>My Favorite Technologies</SectionTitle>
       <Technologies edges={data.allLogos.edges} />
+    </Section>
+    <Section id="contact" dark>
+      <SectionTitle>Contact Me</SectionTitle>
+      <Flex alignItems="center" flexDirection="column">
+        <Box px={2} width={[1, 1 / 2]}>
+          <ContactForm />
+        </Box>
+      </Flex>
     </Section>
   </Layout>
 )
