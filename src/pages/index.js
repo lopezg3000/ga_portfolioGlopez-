@@ -7,6 +7,7 @@ import Layout from "./Layout"
 import HeroText from "../components/HeroText"
 import Social from "../components/Social"
 import Technologies from "../components/Technologies"
+import Educations from "../components/Educations"
 
 import { media } from "../utils/style"
 
@@ -66,6 +67,10 @@ const IndexPage = ({ data }) => (
         </Box>
       </Flex>
     </Section>
+    <Section id="education" dark>
+      <SectionTitle>My Education</SectionTitle>
+      <Educations edges={data.allEducationJson.edges} />
+    </Section>
     <Section id="technologies">
       <SectionTitle>My Favorite Technologies</SectionTitle>
       <Technologies edges={data.allLogos.edges} />
@@ -95,6 +100,17 @@ export const pageQuery = graphql`
           fixed(height: 80, grayscale: true) {
             ...GatsbyImageSharpFixed_withWebp_tracedSVG
           }
+        }
+      }
+    }
+    allEducationJson {
+      edges {
+        node {
+          id
+          school
+          program
+          start
+          end
         }
       }
     }
