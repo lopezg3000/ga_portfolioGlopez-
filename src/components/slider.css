@@ -1,0 +1,155 @@
+.content-slider {
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.slider-container {
+    transform: translateX(7%);
+}
+
+.slider-items {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 2716px;
+}
+
+.carousel-cell.slide {
+    display: flex;
+    flex-direction: row;
+    max-width: 960px;
+    margin: 17px 100px 24px -39px;
+    pointer-events: none;
+}
+
+/* Code below styles slide info column */
+
+.slide .slide-info-column {
+    display: flex;
+    flex: 0 1 57.5%;
+    width: 57.5%;
+    align-items: center;
+}
+
+.slide-info-column .max-wrapper {
+    background: #f3f4f5;
+    padding: 44px 21.5% 44px 33px;
+    text-align: left;
+}
+
+.slide-info-column .max-wrapper .eyebrow {
+    margin: 0 0 25px 0;
+    text-align: inherit;
+}
+
+.slide-info-column .max-wrapper .headline {
+    font-size: 1.99rem;
+    margin: 0 0 25px 0;
+    text-align: inherit;
+}
+
+.slide-info-column .max-wrapper .description {
+    display: block;
+    text-align: inherit;
+    font-size: 1.125rem;
+    margin: 0 0 25px 0;
+}
+
+/* Code below styles slide image column */
+
+.slide .slide-image-column {
+    flex: 0 1 42.5%; 
+    width: 42.5%;
+    box-shadow: 0 2px 19px 0 rgba(0,0,0,.15);
+}
+
+.slide-image-column .image-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .slider-container {
+        transform: translateX(-4%);
+    }
+
+    .carousel-cell.slide {
+        margin: 17px 34px 24px 34px;
+    }
+
+    .slide-info-column .max-wrapper .headline {
+        font-size: 1.59rem;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    /* need to change max-width to 768px but need to know how it will affect promo  */
+    .content-slider {
+        margin: 0 auto 192px;
+    }
+
+    .slide {
+        max-width: 990px;
+    }
+
+    .slider-container {
+        transform: translateX(0%);
+    }
+
+    .carousel-cell.slide {
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 0 0% 0 0%;
+    }
+    
+    .slide .slide-info-column {
+        display: flex;
+        flex: 0 1 57.5%;
+        width: 100%;
+        align-items: center;
+    }
+
+    .slide-info-column .max-wrapper {
+        width: 100%;
+        padding: 220px 22px 22px;
+        margin-top: -176px;
+    }
+
+    .slide-info-column .max-wrapper .eyebrow {
+        margin: 0 0 10px 0;
+    }
+
+    .slide-info-column .max-wrapper .headline {
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        margin: 0 0 10px 0;
+    }
+
+    .slide-info-column .max-wrapper .description {
+        font-size: .92rem;
+        margin: 0 0 10px 0;
+    }
+
+    .slide .slide-image-column {
+        margin: 0 5% 0 5%;
+        width: 90%;
+    }
+
+    .slide-image-column .image-wrapper {
+        display: flex;
+        align-items: center;
+        flex: initial;
+        max-height: 327px;
+        overflow: hidden;
+    }
+
+    .image-wrapper img {
+        height: initial;
+    }
+
+}
+
